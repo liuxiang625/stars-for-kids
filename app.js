@@ -1,4 +1,4 @@
-var starClicked = false;
+var starClicked = true;
 
 $(function() {
   for (var i = 0; i < 8; i++) {
@@ -10,24 +10,24 @@ $(function() {
 
   $('.star').click(function() {
     $(this)
-      .children('.selected')
+      .children('.full')
       .addClass('is-animated');
     $(this)
-      .children('.selected')
+      .children('.full')
       .addClass('pulse');
 
     var target = this;
 
     setTimeout(function() {
       $(target)
-        .children('.selected')
+        .children('.full')
         .removeClass('is-animated');
       $(target)
-        .children('.selected')
+        .children('.full')
         .removeClass('pulse');
     }, 1000);
 
-    starClicked = true;
+    starClicked = !starClicked;
   });
 
   //   $('.half').click(function() {
@@ -49,7 +49,10 @@ $(function() {
   $('.full').click(function() {
     if (starClicked == true) {
       setFullStarState(this);
+    } else {
+      unselectStarState(this);
     }
+
     $(this)
       .closest('.rating')
       .find('.js-score')
@@ -80,26 +83,16 @@ $(function() {
   //   });
 });
 
-function updateStarState(target) {
-  //   $(target)
-  //     .parent()
-  //     .prevAll()
-  //     .addClass('animate');
-  //   $(target)
-  //     .parent()
-  //     .prevAll()
-  //     .children()
-  //     .addClass('star-colour');
-
+function unselectStarState(target) {
   $(target)
     .parent()
-    .nextAll()
     .removeClass('animate');
   $(target)
     .parent()
-    .nextAll()
     .children()
     .removeClass('star-colour');
+
+  $(target).removeClass('star-colour');
 }
 
 // function setHalfStarState(target) {
