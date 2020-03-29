@@ -118,3 +118,37 @@ body {
 .average .score-average {
   padding-top: 30px;
 }
+.icons {
+  text-align: center;
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+  float: left;
+  clear: left;
+  /* transform: translate(-50%, -50%); */
+}
+
+.icons img {
+  display: inline-block;
+  margin: 20px 13px 0px 13px;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  transform: translate(-45px, 0);
+}
+
+.activity {
+  display: inline-block;
+  font-family: arial;
+  font-size: 30px;
+  color: green;
+  margin: 0px 13px 0px 13px;
+  padding-bottom: 20px;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  text-align: center;
+  background: transparent;
+  border: none;
+  transform: translate(-45px, 0);
+}
