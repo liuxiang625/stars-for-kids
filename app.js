@@ -73,23 +73,23 @@ $(function() {
   //     }
   //   });
 
-  $('.full').hover(function() {
-    if (starClicked == false) {
-      setFullStarState(this);
-    }
-  });
+  //   $('.full').hover(function() {
+  //     if (starClicked == false) {
+  //       setFullStarState(this);
+  //     }
+  //   });
 });
 
 function updateStarState(target) {
-  $(target)
-    .parent()
-    .prevAll()
-    .addClass('animate');
-  $(target)
-    .parent()
-    .prevAll()
-    .children()
-    .addClass('star-colour');
+  //   $(target)
+  //     .parent()
+  //     .prevAll()
+  //     .addClass('animate');
+  //   $(target)
+  //     .parent()
+  //     .prevAll()
+  //     .children()
+  //     .addClass('star-colour');
 
   $(target)
     .parent()
@@ -119,7 +119,7 @@ function setFullStarState(target) {
     .siblings('.half')
     .addClass('star-colour');
 
-  updateStarState(target);
+  //   updateStarState(target);
 }
 
 // function calculateAverage() {
