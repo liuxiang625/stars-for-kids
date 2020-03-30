@@ -1,7 +1,7 @@
 var starClicked = true;
 
 $(function() {
-  for (var i = 0; i < 8; i++) {
+  for (var i = 0; i < 11; i++) {
     var ratingEl = $('.rating').attr('id', 'rating' + i);
     $('body').append(ratingEl[0].outerHTML);
     //you can add other logic here, like you want diferent id or class to add in new box
