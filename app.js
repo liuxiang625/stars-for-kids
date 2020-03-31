@@ -1,12 +1,9 @@
-var starClicked = true;
-
 $(function() {
   for (var i = 0; i < 11; i++) {
     var ratingEl = $('.rating').attr('id', 'rating' + i);
     $('body').append(ratingEl[0].outerHTML);
     //you can add other logic here, like you want diferent id or class to add in new box
   }
-  //   console.log($('.rating').outerHTML);
 
   $('.star').click(function() {
     $(this)
@@ -26,8 +23,6 @@ $(function() {
         .children('.full')
         .removeClass('pulse');
     }, 1000);
-
-    starClicked = !starClicked;
   });
 
   //   $('.half').click(function() {
@@ -47,7 +42,11 @@ $(function() {
   //   });
 
   $('.full').click(function() {
-    if (starClicked == true) {
+    if (
+      !$(this)
+        .parent()
+        .hasClass('animate')
+    ) {
       setFullStarState(this);
     } else {
       unselectStarState(this);
@@ -66,8 +65,6 @@ $(function() {
       .closest('.rating')
       .data('vote', $(this).data('value'));
     // calculateAverage();
-
-    console.log(parseInt($(this).data('value')));
   });
 
   //   $('.half').hover(function() {
